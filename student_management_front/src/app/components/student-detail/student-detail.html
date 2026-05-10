@@ -1,0 +1,45 @@
+@if(this.student){
+    <div>
+
+        <button (click)="goBack()">← Retour</button>
+
+        <h2>{{ student.firstName }} {{ student.lastName }}</h2>
+        <p>{{ student.apogee }}</p>
+
+        <h3>Notes par module</h3>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Module</th>
+                <th>Note actuelle</th>
+                <th>Saisir / Modifier</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            @for(mod of modules; track mod){
+                <tr>
+                    <td>{{ mod }}</td>
+                    <td>{{ getNote(mod) !== null ? getNote(mod) + '/20' : '—' }}</td>
+                    <td>
+                    <input
+                        type="number"
+                        min="0"
+                        max="20"
+                        [(ngModel)]="noteInputs[mod]"
+                    />
+                    </td>
+                    <td>
+                    <button (click)="saveNote(mod)">Enregistrer</button>
+                    </td>
+                </tr>
+            }
+           
+            </tbody>
+        </table>
+
+        <p><strong>Moyenne générale : {{ getAverage() }}</strong></p>
+
+    </div>
+}
