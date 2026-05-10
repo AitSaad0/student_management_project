@@ -1,0 +1,16 @@
+<h2>Ajouter un étudiant</h2>
+<div>
+  <label>Prénom</label>
+  <input [(ngModel)]="firstName" placeholder="Prénom" />
+</div>
+<div>
+  <label>Nom</label>
+  <input [(ngModel)]="lastName" placeholder="Nom" />
+</div>
+<div>
+  <label>apogee</label>
+  <input [(ngModel)]="apogee" placeholder="apogee" />
+</div>
+
+<button (click)="submit()">Enregistrer</button>
+<button (click)="cancel()">Annuler</button>

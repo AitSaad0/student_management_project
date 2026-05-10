@@ -1,6 +1,6 @@
 export interface Student {
-    id: string;
-    first_name: string; 
-    last_name: string;
-    apogee: number;
+    id: number;
+    firstName: string; 
+    lastName: string;
+    apogee: string;
 }

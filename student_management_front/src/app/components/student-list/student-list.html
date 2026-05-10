@@ -1,0 +1,26 @@
+<h2>Liste des étudiants</h2>
+<button routerLink="/students/new">+ Ajouter un étudiant</button>
+<table>
+  <thead>
+    <tr>
+      <th>Prénom</th>
+      <th>Nom</th>
+      <th>Apogee</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(student of students; track student.id){
+        <tr>
+            <td>{{ student.firstName }}</td>
+            <td>{{ student.lastName }}</td>
+            <td>{{ student.apogee }}</td>
+            <td>
+                <button (click)="goToDetail(student.id)">Voir</button>
+                <button (click)="deleteStudent(student.id)">Supprimer</button>
+            </td>
+        </tr>
+    }
+    
+  </tbody>
+</table>
